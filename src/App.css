@@ -1,0 +1,849 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: Lato, sans-serif;
+  }    
+body {
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  :root {
+    --color: #ffd40f;
+    --bg: #1a1c22;
+    --grad: linear-gradient(330deg, rgba(255,212,15,1) 0%, rgba(255,132,0,1) 100%);
+    --btnshadow: 0px 15px 29px -10px rgba(0,0,0,0.3);
+    --btnhover: 0px 15px 35px -5px rgba(0,0,0,0.5);
+  }   
+  
+  
+ 
+  .left {
+    float: left;
+  }
+  .right {
+    float: right;
+  }
+  .clear {
+    clear: both;
+  }
+  h1,h2,h3,h4,h5,h6,i,p,li,button,a,span,small,img,section {
+    position: relative;
+    margin: 0;
+  }
+  i {
+    transition: all 0.3s;
+  }
+  img {
+    object-fit: cover;
+  }
+  button {
+    outline: none;
+    position: relative;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s;
+  }
+  a {
+    text-decoration: none;
+  }
+  p {
+    line-height: 1.8;
+  }
+  input, textarea {
+    outline: none;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  ::selection {
+    background: var(--color);
+    color: white;
+  }
+  ::-webkit-scrollbar {
+    width: 4px;
+  } 
+  ::-webkit-scrollbar-track {
+  display: none;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color);
+    border-radius: 40px;
+    display: none;
+  } 
+  .spacer {
+    height: 50px;
+  }
+  .spacers {
+    height: 20px;
+  }
+  .spacerl {
+    height: 100px;
+  }
+  
+  
+  .appcont {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(26, 28, 34,0.95);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 20;
+    display: grid;
+    grid-template-columns: 270px auto;
+    overflow: hidden;
+  }
+  .app {  
+    display: none;
+    padding: 30px;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 100px;
+    overflow-y: scroll;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+  .app::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(0,0,0,1) 20%, rgba(0,0,0,0.2) 90%);
+    z-index: 0;
+  }
+  .sidebar {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    border-right: 1px solid rgba(0,0,0,0.15);
+    text-align: left;
+    background-attachment: fixed;
+    background-position: center;
+    background: url('https://i.imgur.com/33dvQxO.jpg');
+  } 
+  .sidecover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 101%;
+    height: 100%;
+    background: rgba(17, 19, 23,0.95);
+    z-index: 0;
+  }
+  .home {
+    position: relative;
+    overflow-y: scroll;
+    height: 100%;
+    width: 100.5%;
+  }
+  nav {
+    position: absolute;
+    padding: 20px 30px;
+    transition: all 0.3s;
+    z-index: 900;
+    width: 100%;
+    text-align: center;
+  } 
+  .navarrows {
+    position: relative;
+    float: left;
+    top: 4px;
+  }
+  .navarrows i {
+    padding: 8px 12px;
+    background: rgba(255,255,255,0.2);
+    color: #ddd;
+    transition: all 0.2s;
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+  }
+  .navarrows i:hover {
+    background: rgba(255,255,255,0.3);
+  }
+  .profile {
+    position: relative;
+    float: right;
+    cursor: pointer;
+    top: 3px;
+  }
+  .profile img {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+  }
+  nav input {
+    position: relative;
+    margin: auto;
+    width: 300px;
+    border-radius: 40px;
+    padding: 12px 30px;
+    padding-left: 20px;
+    border: none;
+    background: rgba(255,255,255,0.3);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 1px 15px rgba(0,0,0,0.3);
+    transition: all 0.2s;
+  }
+  nav input:hover, nav input:focus {
+    background: rgba(255,255,255,0.6);
+  }
+  nav input:focus {
+    width: 500px;
+  }
+  nav input::placeholder {
+    color: rgba(255,255,255,0.5);
+  }
+  
+  .logo {
+    padding: 20px;
+    padding-top: 30px;
+    text-align: center;
+    color: #bbb;
+    text-transform: uppercase;
+  }
+  .logo span {
+    display: block;
+    margin-top: 10px;
+  }
+  .logo img {
+    width: 50px;
+  }
+  .insidebar {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+  }
+  
+  .insidebar h4 {
+    font-weight: 600;
+    color: #fff;
+    padding: 20px 30px;
+    font-size: 13px;
+  }
+  .sidesec {
+    padding: 10px 0;
+  }
+  .sidesec h6 {
+    padding: 15px 30px;
+    font-size: 13px;
+    color: #999;
+    font-weight: 400;
+    cursor: pointer;
+    border-left: 2px solid transparent;
+    transition: all 0.2s;
+  }
+  .sidesec h6:hover {
+    border-left: 2px solid var(--color);
+    color: var(--color);
+  }
+  .sidesec h6 i {
+    font-size: 15px;
+    width: 25x;
+    margin-right: 15px;
+    transition: all 0s;
+  }
+    
+  .player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 85px;
+    background: rgba(0,0,0,0.4);
+    z-index: 100;
+    backdrop-filter: blur(20px);
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+  }
+  .player > div {
+    padding: 10px 20px;
+  }
+  .playerinfo {
+    cursor: pointer;
+  }
+  .playerartwork {
+    margin-right: 20px;
+  }
+  .playerinfo img {
+    top: 10px;
+    width: 50px;
+  }
+  .playerinfo h6 {
+    color: #ddd;
+    font-weight: 400;
+    font-size: 13px;
+    margin-top: 10px;
+  }
+  .playerinfo small {
+    display: block;
+    color: #777;
+    font-size: 11px;
+    margin-top: 5px;
+  }
+  .playercontrols {
+    text-align: center;
+  }
+  
+  .playercontrols i {
+    font-size: 19px;
+    display: inline-table;
+    top: -7px;
+    color: #fff;
+    margin: auto 10px;
+    border-radius: 100%;
+    cursor: pointer;
+    transform: scaleX(1.3);
+  }
+  .playercontrols .play, .playercontrols .pause {
+    top: auto;
+    background: var(--grad);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s;
+    transform: scaleX(1);
+    font-size: 40px;
+  }
+  .playercontrols .play:hover, .playercontrols .pause:hover {
+    filter: brightness(110%);
+  }
+  .durationdiv > div {
+    position: relative;
+    display: inline-block;
+    top: 3px;
+  }
+  .durationdiv .length {
+    width: 70%;
+    height: 2px;
+    background: #333;
+    border-radius: 40px;
+    top: 0px;
+    cursor: pointer;
+  }
+  .durationdiv small {
+    color: #aaa;
+    font-size: 11px;
+    margin: auto 10px;
+    cursor: default;
+  }
+  .durationdiv .prog {
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    background: var(--grad);
+  }
+ 
+  
+  .playeroptions img {
+    top: 20px;
+    float: right;
+    width: 35px;
+    padding: 5px;
+    margin: auto 10px;
+    cursor: pointer;
+    filter: grayscale(100%) brightness(50%);
+  }
+  
+  
+  .discover {
+    display: block;
+    background-image: url('https://i.imgur.com/y3zn72p.jpg');
+  }
+  .artists {
+    background-image: url('https://i.imgur.com/Y4CKF8b.jpg');
+  }  
+  .app h1 {
+    font-size: 65px;
+    font-weight: 200;
+    color: #fff;
+  }
+  .app h1 span {
+    font-weight: 600;
+  }
+  .app h2 {
+    font-size: 15px;
+    margin-left: 5px;
+    color: #ddd;
+    font-weight: 300;
+  }
+  .app .inner {
+    position: relative;
+    margin-top: 60px;
+    z-index: 10;
+  }
+  .mainbtn {
+    padding: 18px 30px;
+    color: #fff;
+    background: var(--grad);
+    border-radius: 40px;
+    margin-top: 20px;
+    box-shadow: var(--btnshadow);
+  }
+  .mainbtn:hover {
+    box-shadow: var(--btnhover);
+  } 
+  .mainbtn i {
+    margin-right: 10px;
+  }
+  .mainshare {
+    margin-left: 20px;
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 100%;
+    background: #333;
+    color: var(--color);
+    cursor: pointer;
+  }
+  .mainopt {
+    margin-left: 20px;
+    font-size: 23px;
+    color: #fff;
+    padding: 5px;
+    cursor: pointer;
+  }
+  .mainopt:hover {
+    color: var(--color);
+  }
+  
+  .comp {
+    position: relative;
+    float: left;
+    margin: 30px;
+    margin-left: 10px;
+  }
+  .trendcomp {
+    width: 100%;
+  }
+  .trendcomp .track {
+    position: relative;
+    display: inline-table;
+    margin: auto 10px;
+    width: 150px;
+    height: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .trendcomp .track:hover .playcover {
+    opacity: 1;
+  } 
+  .trendcomp .track img {
+    position: relative;
+    width: 100%;   
+    height: 150px;
+    border-radius: 10px;
+  }
+  .trendcomp .track h6 {
+    font-size: 12px;
+    color: #fff;
+    font-weight: 500;
+    margin-top: 7px;
+    margin-bottom: 2px;
+  }
+  .trendcomp .track small {
+    font-size: 10px;
+    font-weight: 600;
+    color: #777;
+  }
+  .comp h5 {
+    color: #eee;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }
+  .playcover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(330deg, rgba(255,212,15,0.6) 0%, rgba(255,132,0,0.6) 100%);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 0.2s;
+  }
+  .playcover i {
+    font-size: 32px;
+    color: #fff;
+  }
+  .top10comp, .lastweekcomp {
+    width: 400px;
+  }
+  .monthlycomp {
+    width: 500px;
+  }
+  .comp table {
+    position: relative;
+    width: 100%;
+    border-collapse: collapse;
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .comp table img {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+  .comp table tr {
+    background: rgba(0,0,0,0.4); 
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  .comp table tr:hover {
+    background: rgba(0,0,0,0.2); 
+  }    
+  .comp table td {
+    padding: 10px;
+  }
+  .comp table td span {
+    color: #aaa;
+    font-size: 14px;
+  }
+  .comp table td h6 {
+    color: #fff;
+    font-weight: 400;
+    font-size: 12px;
+  }
+  .comp table td small {
+    color: #777;
+    font-size: 10.5px;
+    display: block;
+    margin-top: 5px;
+  }
+  .comp table td i {
+    cursor: pointer;
+  }
+  .newcomp{
+    width: 500px;
+  }
+  
+  .contcomp {
+    width: 500px;
+    float: right;
+  }
+  .innercontcomp {
+    position: relative;
+    float: left;
+    margin: 10px;
+  }
+  .artistcomp, .labelcomp {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 30px auto;
+    transition: all 0.2s;
+    cursor: pointer;
+    box-shadow: 0 1px 15px rgba(0,0,0,0.3);
+  }
+  .artistcomp:hover, .labelcomp:hover {
+    filter: brightness(120%)
+  }
+  .artistcomp::after, .labelcomp::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 260px;
+    height: 260px;
+    background: linear-gradient(0deg, rgba(0,0,0,1) 20%, rgba(0,0,0,0.2) 90%);
+    z-index: 0;
+  }
+  .artistcomp img, .labelcomp img {
+    width: 100%;
+    height: 100%;
+  }
+  .artistcomp h6, .labelcomp h6 {
+    position: absolute;
+    bottom: 50px;
+    left: 20px;
+    z-index: 10;
+    color: #eee;
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .artistcomp small, .labelcomp small {
+    bottom: 45px;
+    left: 20px;
+    color: #aaa;
+    z-index: 10;
+    font-size: 12px;
+  }
+  .artistcomp small i, .labelcomp small i {
+    margin-right: 10px;
+  }
+  .singleartcont { 
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  } 
+  .singleartist {
+    background-image: url(https://i.imgur.com/33dvQxO.jpg);
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .singleartist::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 0;
+  }
+  .singleartist .inner {
+    position: relative;
+    width: 80%;
+    height: 100%;
+    margin: auto;
+  }
+  .app header .left:first-child {
+    margin-right: 30px;
+  }
+  .app header .left:last-child {
+    margin-top: 20px;
+  }
+  .app header .info {
+    width: 800px;
+  }
+  .app header .left img {
+    width: 200px;
+    height: 260px;
+    border-radius: 10px;
+  }
+  .app header .left h4 {
+    font-size: 35px;
+    color: #fff;
+    font-weight: 300;
+  }
+  .app header .left small {
+    display: block;
+    color: #999;
+    font-size: 11px;
+    margin-top: 5px;
+  }
+  .app header .left p {
+    font-size: 12px;
+    color: #ccc;
+    margin-top: 20px;
+    font-weight: 400;
+  }
+  .app header .info button {
+    float: left;
+    padding: 15px 25px;
+    margin-top: 20px;
+    margin-right: 20px;
+    border-radius: 40px;
+    background: var(--grad);
+    color: #fff;
+  }
+  .app header .info button i {
+    margin-right: 10px;
+  }
+  .app header .info h6 {
+    float: left;
+    color: #ddd;
+    font-size: 14px;
+    font-weight: 300;
+    top: 27px;
+    cursor: pointer;
+    padding: 5px;
+    transition: all 0.2s;
+  }
+  .app header .info i:hover {
+    color: var(--color);
+  }
+  .app header .info h6 i {
+    margin-right: 10px;
+    font-size: 20px;
+    top: 2px;
+    transition: all 0s;
+  }
+  .tabnav {
+    position: relative;
+    margin-top: 30px;
+  }
+  .tabnav table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .tabnav td {
+    padding: 20px 40px;
+    border-bottom: 2px solid #777;
+    color: #aaa;
+    font-size: 14px;
+    font-weight: 300;
+    transition: all 0.3s;
+    cursor: pointer;
+    text-align: center;
+  }
+  .tabnav td:hover {
+    color: #fff;
+    border-color: #fff;
+  }
+  .tabcont {
+    display: none;
+  }
+  .tabcont table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .tabcont thead {
+    border-bottom: 1px solid #555;
+  }
+  .tabcont thead th {
+    text-align: left;
+    color: #555;
+    font-weight: 400;
+    font-size: 13px;
+    padding-bottom: 10px;
+  }
+  .tabcont td {
+    color: #aaa;
+    font-size: 13px;
+    padding: 10px 5px;
+    max-width: 100px;
+  }
+  .tabcont td:nth-child(3), .tabcont td:nth-child(4), .tabcont td:nth-child(5)  {
+    color: #eee;
+  }
+  .tabcont tbody tr {
+    transition: all 0.3s;
+  }
+  .tabcont tbody tr:hover {
+    background: rgba(255,255,255,0.03);
+  }
+  .tabcont img {
+    width: 40px;
+    height: 40px;
+  }
+  .tabcont h3 {
+    margin: 25px 0 35px 0;
+    font-size: 24px;
+    color: #ccc;
+    font-weight: 400;
+  }
+  .tabcont thead th:first-child, .tabcont tbody td:first-child, .tabcont thead th:nth-of-type(2), .tabcont tbody td:nth-child(2) {
+    max-width: 20px;
+    padding-left: 10px;
+  }
+  .tabcont i {
+    top: -1px;
+    font-size: 20px;
+    padding: 10px;
+  }
+  .tabcont td {
+    cursor: pointer;
+  } 
+  .newreltab {
+    display: block;
+  }
+  .tabnav td:first-child {
+    color: #fff;
+    border-color: #fff;
+  }
+  
+  
+  .searchdiv {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 990;
+    background: rgba(0,0,0,0.9);
+    text-align: center;
+    padding: 30px;
+    display: none;
+  }
+  .searchdiv input {
+    position: relative;
+    margin-top: 100px;
+    width: 800px;
+    height: 100px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    border-bottom: 2px solid #aaa;
+    color: #eee;
+    font-weight: 300;
+  }
+  .searchdiv input::placeholder {
+    color: #555;
+  }
+  .searchdiv .close {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    color: #eee;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  @media (max-width:1080px) {
+    .appcont {
+        grid-template-columns: 50px auto;
+    }
+    .logo {
+        display: none;
+    }
+    .insidebar {
+        margin-top: 50px;
+    }
+    .sidebar h4 {
+        display: none;
+    }
+    .sidebar h6 {
+        padding: 15px 10px;
+    }
+    .sidebar h6 i {
+        font-size: 20px;
+    }
+    .sidebar h6 span {
+        display: none;
+    }
+   
+     
+  }
